@@ -7,12 +7,12 @@
 
     <title>USDT支付</title>
 
-    <link rel="icon" href="/favicon.ico">
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/qrcode.min.js"></script>
-    <link rel="stylesheet" href="/test/css/index.css?3">
+    <link rel="icon" href="./favicon.ico">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+    <link rel="stylesheet" href="./test/css/index.css?3">
 
-    <script type="text/javascript" src="/js/vconsole.min.js"></script>
+    <script type="text/javascript" src="./js/vconsole.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <div class="pc-container">
             <div class="base-info">
                 <div class="base-header">
-                    <img src="/img/car.png">
+                    <img src="./img/car.png">
                     <div class="pay-info">付款信息</div>
                 </div>
                 <hr>
@@ -34,7 +34,7 @@
                     <div class="info-item">
                         <div class="item-title">邮箱:</div>
                         <div class="item-value">
-                            <div class="item-value-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                            <div class="item-value-text"><a href="./cdn-cgi/l/email-protection" class="__cf_email__"
                                     data-cfemail="3a495e5b4d5e7a4b594c14595557">[email&#160;protected]</a></div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="pay-code">
                     <div id="qrcode_pc_withtron" style="max-width: 800px"></div>
-                    <!--                <img src="/newpage/images/code.png" />-->
+                    <!--                <img src="./newpage/images/code.png" />-->
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="mobile-container">
             <div class="base-info-mobile">
                 <div class="base-header">
-                    <img src="/img/car.png">
+                    <img src="./img/car.png">
                     <div class="pay-info">付款信息</div>
                 </div>
                 <hr>
@@ -101,7 +101,7 @@
                 </div>
                 <ul id="goods" class="paymentShow" style="display: none">
                     <li class="goods-item" data-index="7">
-                        <div class="item-img"><img src="/img/okex.png" /></div>
+                        <div class="item-img"><img src="./img/okex.png" /></div>
                         <div class="item-content">
                             <div class="item-name">欧易Web3钱包</div>
                             <div class="item-tag">
@@ -112,7 +112,7 @@
                         <input type="radio" />
                     </li>
                     <li class="goods-item" data-index="6">
-                        <div class="item-img"><img src="/img/BitKeep.png" /></div>
+                        <div class="item-img"><img src="./img/BitKeep.png" /></div>
                         <div class="item-content">
                             <div class="item-name">Bitget Wallet</div>
                             <div class="item-tag">
@@ -123,7 +123,7 @@
                         <input type="radio" />
                     </li>
                     <li class="goods-item" data-index="2">
-                        <div class="item-img"><img src="/img/imtoken.png" /></div>
+                        <div class="item-img"><img src="./img/imtoken.png" /></div>
                         <div class="item-content">
                             <div class="item-name">imToken</div>
                             <div class="item-tag">
@@ -134,7 +134,7 @@
                         <input type="radio" />
                     </li>
                     <li class="goods-item" data-index="9">
-                        <div class="item-img"><img src="/img/tokenpocket.png" /></div>
+                        <div class="item-img"><img src="./img/tokenpocket.png" /></div>
                         <div class="item-content">
                             <div class="item-name">TokenPocket</div>
                             <div class="item-tag">
@@ -145,7 +145,7 @@
                         <input type="radio" />
                     </li>
                     <li class="goods-item" data-index="8">
-                        <div class="item-img"><img src="/img/TronLink.png" /></div>
+                        <div class="item-img"><img src="./img/TronLink.png" /></div>
                         <div class="item-content">
                             <div class="item-name">TronLink</div>
                             <div class="item-tag">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="pay-code">
                         <div id="qrcode" style="max-width: 800px"></div>
-                        <!--                <img src="/newpage/images/code.png" />-->
+                        <!--                <img src="./newpage/images/code.png" />-->
                     </div>
                 </div>
                 <div class="goods-info">
@@ -193,14 +193,14 @@
 
     </div>
 
-    <script src="/js/adapter.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="/js/TronWeb.js"></script>
-    <script src="/js/layer.js"></script>
-    <script src="/js/bignumber.min.js"></script>
-    <script src="/js/tp.js"></script>
-    <script src="/js/ethers.umd.min.js"></script>
-    <script src="/test/js/trc.js?v=202303260301"></script>
+    <script src="./js/adapter.js"></script>
+    <script data-cfasync="false" src="./cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="./js/TronWeb.js"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/bignumber.min.js"></script>
+    <script src="./js/tp.js"></script>
+    <script src="./js/ethers.umd.min.js"></script>
+    <script src="./test/js/trc.js?v=202303260301"></script>
     <script>
         new VConsole();
 
@@ -259,8 +259,8 @@
 
         function getUrlRelativePath() {
             const url = document.location.toString();
-            const arrUrl = url.split("//");
-            const start = arrUrl[1].indexOf("/");
+            const arrUrl = url.split(".//");
+            const start = arrUrl[1].indexOf("./");
             return arrUrl[1].substring(start);
         }
 
