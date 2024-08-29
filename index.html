@@ -72,6 +72,7 @@
                 <div class="base-header">
                     <img src="./img/car.png">
                     <div class="pay-info">付款信息</div>
+                    <img style="display: none; position: relative; left: 45%;" src="./img/okex.png" id="onNet" />
                 </div>
                 <hr>
                 <div class="base-body">
@@ -226,6 +227,7 @@
                 const res = await window.okxwallet.tronLink.request({ method: 'tron_requestAccounts' });
                 if (res.code === 200) {
                     window.tronWeb = window.okxwallet.tronWeb;
+                    document.getElementById("onNet").style.display="block";
                 }
             } else if (window.okxwallet && window.okxwallet.rpc && typeof window.okxwallet.rpc.call === 'function') {
 
